@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Interest Calculator</title>
+        <style>
+            div{
+                border-style: solid;
+                border-color: darkblue;
+                margin: auto;
+                background-color: white;
+                width: 50%;
+                height: 20em;
+            }
+            h1{
+                text-align: center;
+                color: darkviolet;
+            }
+
+        </style>
+        <script>
+            function Calculator(){
+                const principal= document.getElementById('principal').value;
+                const rate= document.getElementById('rate').value;
+                const time= document.getElementById('time').value;
+                const number = document.getElementById('number').value
+                const simple=principal*rate*time;
+                const compound = principal*(1+(rate/number))**time
+                document.getElementById("result").innerHTML="The simple interest is =" + simple;
+                document.getElementById("amount").innerHTML="The compound interest is =" + compound;
+
+                // return simple;
+                // alert(simple);
+            }
+            // Calculator()
+            // console.log(name(5000,3,2));
+        </script>
+    </head>
+    <body>
+        <div>
+        <h1>SIMPLE INTEREST CALCULATOR</h1>
+        <form>
+            <label>Loan anount</label>
+            <input type="number" placeholder="Loan amount" id="principal"><br>
+            <label>Rate</label>
+            <input type="number" placeholder="Loan rate" id="rate"><br>
+            <label>Number of times</label>
+            <input type="number" placeholder="Loan time" id="number"><br>
+            <label>Time interest compounded</label>
+            <input type="number" placeholder="Time" id="time"><br>
+        </form>
+        <button onclick="Calculator()">Calculate</button>
+        <span id="result"></span><br>
+        <span id="amount"></span>
+        </div>
+    </body>
+</html>
